@@ -2,7 +2,7 @@
 
 The data set type is passed into this function.  For the function to work properly, the input can only be "train" or "test".
 
-There are three variable names that contain the names for the X_z.txt, y_z.txt, and the subject_z.txt files.
+There are three variable  that contain the names for the X_z.txt, y_z.txt, and the subject_z.txt files.
 - XFile
 - YFile
 - SFile
@@ -13,10 +13,10 @@ For example, if the instantiation of this function is going to work on the train
 tidyData("train")
 ```
 
-and **(NOTE THAT DATA ARE STORED IN the sub directory /data)**
+and thus
 
-XFile will equal "./data/X_train.txt"
-YFile will equql "./data/y_train.txt"
-SFile will equal "./data/subject_train.txt"
+- XFile = "./data/X_train.txt"  **(NOTE THAT ALL DATA ARE STORED IN the sub directory /data)**
+- YFile = "./data/y_train.txt"   
+- SFile = "./data/subject_train.txt"
 
 
