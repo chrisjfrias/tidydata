@@ -1,11 +1,6 @@
 # RUN ANALYSIS
 ---------------------------------------------------------
-### FUNCTION
+This script is organized in the following hierarchy
 
-## TRAIN DATA FRAME
-
-## TEST DATA FRAME
-
-## BIND & SORT DATA FRAMES
-
-## WRITE FILE
+## tidyData Function
+------------------------
