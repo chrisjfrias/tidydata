@@ -2,7 +2,7 @@
 --------------------------
 
 
-### Step 1. Create a Tidy Data Frame for the "train" data set
+### Step 1. Create a Tidy Aggregated Data Frame for the "train" data set
 
 Execute my R function named *tidyData(z)* that returns a tidy data frame meeting all the requirements in the Course Project except that it only works on one data set at a time. 
 
@@ -12,7 +12,7 @@ trainDF<-tidyData("train")
 ````
 ------------------------
 
-### Step 2.  Create a Tidy Data Frame for the "test" data set
+### Step 2.  Create a Tidy Aggregated Data Frame for the "test" data set
 By passing "test" to the tidyData() function, a tidy data frame for the test data set are passed to the testDF data frame
 
 ```
@@ -33,4 +33,11 @@ There is no explicit requirement, but the wording from the project ,"with the av
 
 ```
 DF<-arrange(DF,ActivityName,SubjectID)
+```
+
+----------------------
+### Step 5. 
+Write the data frame DF into a file named "tidydata.txt" which is stored in the working directory 
+```
+write.table(DF, "tidydata.txt", row.names=FALSE,col.names=TRUE, sep=",")
 ```
