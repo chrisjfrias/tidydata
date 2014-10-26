@@ -15,9 +15,9 @@ tidyData("train")
 
 and thus
 
-- XFile = "./data/X_train.txt"  **(NOTE THAT ALL DATA ARE STORED IN the sub directory /data)**
-- YFile = "./data/y_train.txt"   
-- SFile = "./data/subject_train.txt"
+- *XFile* = "./data/X_train.txt"  **(NOTE THAT ALL DATA ARE STORED IN the sub directory /data)**
+- *YFile* = "./data/y_train.txt"   
+- *SFile* = "./data/subject_train.txt"
 
 The "features.txt" file is read into a data frame named *feat*.
 
@@ -26,4 +26,20 @@ This new data frame is called *featMS*
 
 *featMS* is now out of order, so arrange is used on it to sort it by column 1 which contains an index
 
-The X data contained in the file *XFile* are now read into a data frame named *xdf*
+The file *XFile* is now read into a data frame named *xdf*
+
+The subset function is used to only keep the column numbers in *xdf* that are also in the *featMS* data frame.  In other words, only columns containing "mean" and "std" remain in *xdf*
+
+***Use the colnames function to set each column name to be equal to the value in the features.txt file.***
+
+A new data frame is created named *ydf*.  This contains the information in the *YFile*.  This is a dataframe that contains an Activity ID for each of the observations in the *xdf*
+
+The lone column in *ydf* is added as a column to the *xdf* data frame
+
+The *SFile* file is read into a data  frame *sdf*.  This is a single column data frame containing the subjectID for each observation in xdf.
+
+The lone column in *sdf* is added as a column to the *xdf* data frame.
+
+The "activity_labels.txt" is read into a data frame named *an*.  This will be used as a lookup table for the meaning of the *ydf* data.
+
+*an* and *xdf* are put into a list of data frames and then merged using the join_all function.  Now each observation in xdf has a descriptive activity names
