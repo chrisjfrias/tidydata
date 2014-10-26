@@ -19,3 +19,18 @@ By passing "test" to the tidyData() function, a tidy data frame for the test dat
 testDF<-tidyData("test")
 ```
 --------------------------
+
+### Step 3.  Union trainDF and testDF
+Using rbind, the two data frames are unioned into one data frame named **DF**
+
+```
+DF<-rbind(trainDF,testDF)
+```
+------------------------------
+
+### Step 4.  Sort the Data Frame
+There is no explicit requirement, but the wording from the project ,"with the average of each variable for each activity and each subject." implied to me that the final data file should be sorted first by the activity being perfomed and then the subject performing the activity.
+
+```
+DF<-arrange(DF,ActivityName,SubjectID)
+```
