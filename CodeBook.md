@@ -31,6 +31,8 @@ The file *XFile* is now read into a data frame named *xdf*
 The subset function is used to only keep the column numbers in *xdf* that are also in the *featMS* data frame.  In other words, only columns containing "mean" and "std" remain in *xdf*
 
 ***Use the colnames function to set each column name to be equal to the value in the features.txt file.***
+*** Now each column has a descriptive variable names**
+*** I use the names in the features.txt file because I don't presume to know the data better than the owners**
 
 A new data frame is created named *ydf*.  This contains the information in the *YFile*.  This is a dataframe that contains an Activity ID for each of the observations in the *xdf*
 
@@ -43,3 +45,11 @@ The lone column in *sdf* is added as a column to the *xdf* data frame.
 The "activity_labels.txt" is read into a data frame named *an*.  This will be used as a lookup table for the meaning of the *ydf* data.
 
 *an* and *xdf* are put into a list of data frames and then merged using the join_all function.  Now each observation in xdf has a descriptive activity names
+
+Final step is to use the ddply & and the colMeans to create averages for each unique Activity & Subject combination
+
+#Remaining Code
+*trainDF* contains the aggregated tidy data from for the training data
+*testDF* contains the aggregated tidy data from the test data
+*DF* contains the sorted union of *trainDF* and *testDF*
+
